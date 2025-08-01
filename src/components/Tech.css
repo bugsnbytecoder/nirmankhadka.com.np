@@ -1,0 +1,51 @@
+.octagon-container {
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+    margin: 10px;
+    perspective: 1000px; /* Creates 3D perspective for the octagon */
+  }
+  
+  .octagon {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background: linear-gradient(145deg, #e6e6e6, #cccccc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(
+      30% 0%, 
+      70% 0%, 
+      100% 30%, 
+      100% 70%, 
+      70% 100%, 
+      30% 100%, 
+      0% 70%, 
+      0% 30%
+    );
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .octagon:hover {
+    transform: rotateY(10deg) rotateX(10deg) translateZ(10px); /* 3D rotation on hover */
+    background: linear-gradient(145deg, #915eff, #6c47d9);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 24px rgba(0, 0, 0, 0.22); /* Deeper shadow */
+  }
+  
+  .octagon-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+  }
+  
+  .octagon:hover .octagon-icon {
+    transform: rotate(360deg) scale(1.1); /* Rotate and scale icon on hover */
+  }
+  
+  .octagon-container:hover .octagon {
+    cursor: pointer;
+  }
+  
